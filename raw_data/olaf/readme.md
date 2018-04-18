@@ -1,5 +1,5 @@
 # Informacje na temat osoby
-- wzrost: 186
+- wzrost: 186 cm
 - płeć: mężczyzna
 
 # Informacje na temat telefonu

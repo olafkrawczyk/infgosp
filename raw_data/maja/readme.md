@@ -1,5 +1,5 @@
 # Informacje na temat osoby
-- wzrost: 162cm
+- wzrost: 162 cm
 - płeć: kobieta
 
 # Informacje na temat telefonu
