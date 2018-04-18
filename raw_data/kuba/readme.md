@@ -1,1 +1,7 @@
-NOTE: 2018-04-09 -> do przetestowania czy dane właściwie zostały zebrane
+# Informacje na temat osoby
+- wzrost: 181
+- płeć: mężczyzna
+
+# Informacje na temat telefonu
+- system: Android 4.2
+- model: Samsung Galaxy SIII Mini
