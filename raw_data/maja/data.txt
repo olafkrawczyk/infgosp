@@ -1,0 +1,4 @@
+Maja Effenberg,
+height: 1,62 m,
+phone model: Samsung Galaxy A5(2017)
+os: Android 7.0

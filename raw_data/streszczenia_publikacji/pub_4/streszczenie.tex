@@ -1,0 +1,67 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{polski}
+\usepackage{indentfirst}
+
+\begin{document}
+\begin{center}
+	\LARGE Streszczenie
+\end{center}
+\begin{center}
+	{\Large A Study on Human Activity Recognition Using Accelerometer Data
+		from Smartphones - Akram Bayat, Marc Pomplun, Duc A. Tran}
+\end{center}
+
+\section{Wstęp}
+W pracy opisanej w tym dokumencie zaproponowane zostało podejście do rozpoznawania aktywności użytkownika
+na podstawie danych otrzymywanych z akcelerometru wbudowanego w telefon komórkowy.
+
+Do rozpoznawania aktywności na podstaie uzyskanych danych wykorzystano nadzorowane uczenie maszynowe.
+
+Zbudowany przez autorów pracy model służy do rozpoznawania następujących aktywności:
+\begin{itemize}
+	\item powolny chód,
+	\item szybki chód,
+	\item bieg,
+	\item wchodzenie po schodach,
+	\item zchodzenie ze schodów
+\end{itemize}
+
+Dane zostały zebrane w postaci wartości x, y, z zwracanych przez akcelerometr.
+Zebrane dane pochodziły od dwu kobiet oraz mężczyzn, którzy kolejno wykonywali wymienione aktywności. Czas wyknoywania aktywności wahał się od 180 do 280 sekund. Dane były zbierane z częstotliwością 100Hz.
+
+\section{Ekstrakcja cech}
+
+Rozpoznawanie aktywności nie przebiega na surowych danych, lecz na wektorach cech.
+Dla serii danych $A_x, A_y, A_z$ wykorzystano filtr dolnoprzepustowy, aby oddzielić składowe o wysokiej częstotliwośći (AC) od niskiej (DC) powiązanych kolejno z aktywnością użytkownika oraz przyspieszeniem ziemskim. Dokument dokładniej opisuje budowę tego filtra.
+
+Zastosowanie filtra spowodowało dodanie kolejnych 6 serii danych $A_{DCi}, A_{ACi}$.
+Do serii danych dodano również wartość $A_m$, która odpowiada długości wektora [x, y, z].
+
+Z utworzonych 24 cech (dokładny opis w dokumencie strona 5) wybrano 18:
+\begin{itemize}
+	\item średnia wartość na osi z,
+	\item MinMax, odchylenie statndardowe, średnia kwadratowa dla $A_m$,
+	\item APF - średnie liczba szczytów w oknie osie x,y,z,
+	\item wariancja APF dla osi x,y,z,
+	\item odchylenie standardowe dla osi x,y,z,
+	\item korelacja pomiędzy osiami z oraz y,
+	\item MinMax dla osi x,y,z
+\end{itemize}
+
+MinMax to różnica pomiędzy maksymalną, a minimalną wartością sygnału występującymi w oknie.
+
+\section{Klasyfikatory}
+W opisywanej tutaj pracy przebadano dokładność następujących klasyfikatorów:
+\begin{itemize}
+	\item Multilayer Perceptron
+	\item SVM
+	\item Random Forest
+	\item LMT
+	\item Simple Logistic
+	\item Logit Boost
+\end{itemize}
+
+Przeporowadzono analizę dokładności wykrywania aktywności dla telefonu umieszczonego w kieszeni oraz trzymanego w ręce. Podczas gdy telefon był umieszczony w kieszeni uzyskano dokładność 90.34\%. Szczegółowe wyniki przedstawione są na stronie 6.
+\end{document}
