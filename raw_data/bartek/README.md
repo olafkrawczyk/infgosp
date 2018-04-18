@@ -1,7 +1,7 @@
 # Informacje na temat osoby
-- wzrost: [unknown]
+- wzrost: 180 cm
 - płeć: mężczyzna
 
 # Informacje na temat telefonu
-- system: [unknown]
-- model: [unknown]
+- system: Android 7.0
+- model: Samsung Galaxy S7
